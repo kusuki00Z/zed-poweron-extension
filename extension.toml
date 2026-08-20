@@ -8,4 +8,4 @@ repository = "https://github.com/kusuki00Z/zed-poweron-extension"
 
 [grammars.poweron]
 repository = "file:///C:/Users/rzhou/dev/git%20backup/zed-poweron-extension"
-rev = "73d3ab5552073fac13a5f44ba976b1923fc056bb"
+rev = "HEAD"
