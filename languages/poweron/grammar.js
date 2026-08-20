@@ -15,11 +15,12 @@ module.exports = grammar({
       $.procedure_definition,
       $.control_statement,
       $.call_statement,
+      $.placeholder_assignment,
       $.assignment,
       $.expression,
     ),
 
-    block_comment: _ => /\[[^\]]*\]/,
+    block_comment: _ => token(prec(1, /\[[^\]]*\]/)),
 
     include: $ => seq(
       '#INCLUDE',
@@ -42,9 +43,9 @@ module.exports = grammar({
 
     control_statement: $ => choice(
       seq('IF', field('condition', $.expression)),
-      seq('ELSE', optional('IF'), optional(field('condition', $.expression))),
+      'ELSE',
       seq('WHILE', field('condition', $.expression)),
-      seq('FOR', repeat1($.expression)),
+      $.for_statement,
       'THEN',
       'DO',
       'END',
@@ -57,10 +58,21 @@ module.exports = grammar({
       field('name', $.identifier),
     ),
 
+    for_statement: $ => choice(
+      seq('FOR', $.identifier, '=', $.expression, 'TO', $.expression),
+      seq('FOR', $.identifier, $.identifier),
+    ),
+
     assignment: $ => seq(
-      field('left', $.expression),
+      field('left', $.lvalue),
       '=',
       field('right', $.expression),
+    ),
+
+    placeholder_assignment: $ => seq(
+      field('left', $.lvalue),
+      '=',
+      $.block_comment,
     ),
 
     function_call: $ => prec(1, seq(
@@ -74,9 +86,9 @@ module.exports = grammar({
       $.keyword,
       $.type,
       $.constant,
+      $.environment_parameter,
       $.field_access,
       $.function_call,
-      $.array_access,
       $.identifier,
       $.string,
       $.number,
@@ -90,18 +102,16 @@ module.exports = grammar({
       field('field', $.identifier),
     ),
 
-    array_access: $ => seq(
-      field('name', $.identifier),
-      '(',
-      $.expression,
-      ')',
+    environment_parameter: $ => seq('@', $.identifier),
+
+    lvalue: $ => choice(
+      $.identifier,
+      $.field_access,
+      $.function_call,
     ),
 
     keyword: $ => token(choice(
-      'IF', 'ELSE', 'END', 'THEN', 'DO', 'WHILE', 'FOR', 'RETURN',
-      'CALL', 'GOSUB', 'PROGRAM', 'PROC', 'SUBROUTINE', 'PROCEDURE',
-      'DEFINE', 'SETUP', 'SELECT', 'PRINT', 'TOTAL', 'TARGET', 'NONE',
-      'TERMINATE',
+      'TARGET', 'NONE', 'GOSUB', 'PROGRAM', 'PROC',
     )),
 
     type: $ => token(choice(
@@ -115,7 +125,7 @@ module.exports = grammar({
     string: _ => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
     number: _ => /-?[0-9]+(\.[0-9]+)?/,
     operator: _ => token(choice('==', '<>', '!=', '<=', '>=', '+', '-', '*', '/', '=', '<', '>')),
-    punctuation: _ => token(choice(':', ',', '.', '(', ')', '[', ']', '{', '}')),
+    punctuation: _ => token(choice(':', ',', '.', '(', ')', '{', '}')),
   },
 });
 
