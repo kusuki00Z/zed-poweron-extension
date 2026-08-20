@@ -1,0 +1,6 @@
+name = "PowerOn"
+grammar = "poweron"
+path_suffixes = ["PND", "PN", "PRO", "DEF"]
+line_comments = [";", "//"]
+tab_size = 2
+hard_tabs = false
