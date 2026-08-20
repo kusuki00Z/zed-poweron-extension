@@ -8,6 +8,7 @@
 (keyword) @keyword
 (type) @type
 (constant) @constant
+(environment_parameter) @variable.special
 (function_call name: (identifier) @function)
 (call_statement name: (identifier) @function)
 (procedure_definition name: (identifier) @function)
