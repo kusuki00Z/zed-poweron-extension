@@ -1,0 +1,7 @@
+id = "zed-poweron-extension"
+name = "Zed PowerOn Extension"
+version = "0.0.1"
+schema_version = 1
+authors = ["kusuki00z <https://github.com/kusuki00Z>"]
+description = "This is a Zed extension used for the PowerOn language syntax highlighting"
+repository = "https://github.com/kusuki00Z/zed-poweron-extension"
