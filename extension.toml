@@ -1,5 +1,5 @@
-id = "zed-poweron-extension"
-name = "Zed PowerOn Extension"
+id = "poweron"
+name = "PowerOn"
 version = "0.0.1"
 schema_version = 1
 authors = ["kusuki00z <https://github.com/kusuki00Z>"]
