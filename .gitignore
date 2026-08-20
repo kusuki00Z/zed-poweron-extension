@@ -2,5 +2,3 @@
 /Cargo.lock
 /examples/
 /extension.wasm
-/grammars/
-/languages/poweron/src/
