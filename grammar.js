@@ -111,7 +111,8 @@ module.exports = grammar({
     ),
 
     keyword: $ => token(choice(
-      'TARGET', 'NONE', 'GOSUB', 'PROGRAM', 'PROC',
+      'TARGET', 'NONE', 'GOSUB', 'PROGRAM', 'PROC', 'DEFINE', 'END',
+      'SELECT', 'SUBROUTINE', 'DEMAND', 'SETUP', 'PRINT',
     )),
 
     type: $ => token(choice(
