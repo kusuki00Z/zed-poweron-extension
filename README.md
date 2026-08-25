@@ -7,6 +7,10 @@ This repository provides:
 - PowerOn language detection for `.PND`, `.PN`, `.PRO`, and `.DEF` files.
 - Highlighting for comments, includes, strings, numbers, keywords, types, constants, calls, procedures, fields, and operators.
 
+## Installation
+- Clone this repo.
+- In Zed, run `zed: install dev extension` from the command palette and select this repository.
+
 ## Local development
 
 1. Install Rust with `rustup`.
