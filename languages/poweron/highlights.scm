@@ -13,7 +13,6 @@
 (call_statement name: (identifier) @function)
 (procedure_definition name: (identifier) @function)
 (field_access record: (identifier) @type field: (identifier) @property)
-(array_access name: (identifier) @variable)
 
 (operator) @operator
 (punctuation) @punctuation.delimiter
