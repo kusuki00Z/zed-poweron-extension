@@ -7,5 +7,5 @@ description = "This is a Zed extension used for the PowerOn language syntax high
 repository = "https://github.com/kusuki00Z/zed-poweron-extension"
 
 [grammars.poweron]
-repository = "file:///C:/Users/rzhou/dev/git%20backup/zed-poweron-extension"
+repository = "https://github.com/kusuki00Z/zed-poweron-extension"
 rev = "HEAD"
