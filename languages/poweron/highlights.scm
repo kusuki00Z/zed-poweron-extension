@@ -6,6 +6,23 @@
 (number) @number
 
 (keyword) @keyword
+("SUBROUTINE" @keyword)
+("DEFINE" @keyword)
+("SETUP" @keyword)
+("SELECT" @keyword)
+("PRINT" @keyword)
+("TOTAL" @keyword)
+("PROCEDURE" @keyword)
+("IF" @keyword)
+("ELSE" @keyword)
+("WHILE" @keyword)
+("FOR" @keyword)
+("THEN" @keyword)
+("DO" @keyword)
+("END" @keyword)
+("RETURN" @keyword)
+("TERMINATE" @keyword)
+("CALL" @keyword)
 (type) @type
 (constant) @constant
 (environment_parameter) @variable.special
