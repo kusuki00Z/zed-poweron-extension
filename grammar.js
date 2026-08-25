@@ -96,11 +96,11 @@ module.exports = grammar({
       $.punctuation,
     ),
 
-    field_access: $ => seq(
+    field_access: $ => prec(1, seq(
       field('record', $.identifier),
       ':',
       field('field', $.identifier),
-    ),
+    )),
 
     environment_parameter: $ => seq('@', $.identifier),
 
@@ -125,7 +125,7 @@ module.exports = grammar({
     string: _ => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
     number: _ => /-?[0-9]+(\.[0-9]+)?/,
     operator: _ => token(choice('==', '<>', '!=', '<=', '>=', '+', '-', '*', '/', '=', '<', '>')),
-    punctuation: _ => token(choice(':', ',', '.', '(', ')', '[', ']', '{', '}')),
+    punctuation: _ => choice(':', ',', '.', '(', ')', '[', ']', '{', '}'),
   },
 });
 

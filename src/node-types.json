@@ -290,6 +290,11 @@
     }
   },
   {
+    "type": "punctuation",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "section",
     "named": true,
     "fields": {}
@@ -356,6 +361,10 @@
   },
   {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {
@@ -443,6 +452,14 @@
     "named": false
   },
   {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
     "type": "block_comment",
     "named": true
   },
@@ -467,15 +484,19 @@
     "named": true
   },
   {
-    "type": "punctuation",
-    "named": true
-  },
-  {
     "type": "string",
     "named": true
   },
   {
     "type": "type",
     "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
   }
 ]
