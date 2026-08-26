@@ -1,6 +1,6 @@
 # Zed PowerOn Extension
 
-PowerOn language support for the Zed editor.
+PowerOn language syntax highlighting support for Zed editor.
 
 This repository provides:
 
